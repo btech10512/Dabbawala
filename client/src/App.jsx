@@ -6,7 +6,7 @@ import {
   Search, Truck, Utensils, X
 } from "lucide-react";
 
-const API = (import.meta.env.VITE_API_BASE_URL").replace(/\/$/, "");
+const API = (import.meta.env.VITE_API_BASE_URL|| "http://127.0.0.1:8000").replace(/\/$/, "");
 const STATUSES = ["preparing", "picked_up", "in_transit", "delivered"];
 const STATUS_LABELS = {
   preparing: "Preparing",
