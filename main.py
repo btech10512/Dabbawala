@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from database import create_tables
 from routes.orders import router as orders_router
 from routes.stats import router as stats_router
+from fastapi.middleware.cors import CORSMiddleware
 
 @asynccontextmanager
 async def lifespan(app : FastAPI):
@@ -16,6 +17,13 @@ app = FastAPI(
     description="API for managing dabbawala deliveries and tracking order status",
     version="1.0.0",
     lifespan=lifespan
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(orders_router)
