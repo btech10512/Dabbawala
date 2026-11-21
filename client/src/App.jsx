@@ -6,7 +6,7 @@ import {
   Search, Truck, Utensils, X
 } from "lucide-react";
 
-const API = (import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000 || uvicorn main:app --host 0.0.0.0 --port $PORT").replace(/\/$/, "");
+const API = (import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000 || uvicorn main:app --host 0.0.0.0 --port $PORT || https://dabbawala1.onrender.com/").replace(/\/$/, "");
 const STATUSES = ["preparing", "picked_up", "in_transit", "delivered"];
 const STATUS_LABELS = {
   preparing: "Preparing",
