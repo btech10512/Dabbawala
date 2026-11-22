@@ -18,18 +18,21 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan
 )
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         "https://dabbawala.vercel.app",
+        "https://dabbawala-git-main-ankits-projects-2342d1a2.vercel.app",
     ],
     allow_origin_regex=r"^https://.*\.vercel\.app$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 app.include_router(orders_router)
 app.include_router(stats_router)
